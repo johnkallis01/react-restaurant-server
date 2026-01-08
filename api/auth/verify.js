@@ -1,6 +1,5 @@
 import jwt from 'jsonwebtoken';
-import { setCors } from "../../utils/cors.js";
-import dotenv from 'dotenv';
+
 export default async function handler(req, res) {
     
   const allowedOrigins = [
