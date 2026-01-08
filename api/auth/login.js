@@ -1,15 +1,9 @@
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import User from '../../models/User.model.js';
-
+import { setCors } from "../../utils/cors.js";
 export default async function handler(req, res) {
-  // 🔑 CORS HEADERS — MUST BE FIRST
-  res.setHeader("Access-Control-Allow-Origin", "https://react-restaurant-virid-nine.vercel.app");
-  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
-  res.setHeader("Access-Control-Allow-Credentials", "true");
-
-  // 🔑 Handle preflight
+  setCors(req, res);
   if (req.method === "OPTIONS") {
     return res.status(200).end();
   }
