@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-// import authVerify from './api/auth/verify.js';
+import authVerify from './api/auth/verify.js';
 import authLogin from './api/auth/login.js';
 import menuRoutes from './api/menus.js';
 // import cookieParser from "cookie-parser";
@@ -56,6 +56,6 @@ app.listen('5000', () => {
 });
 app.use('/api/menus', menuRoutes);
 // app.use('/api/auth', authRoutes);
-// app.post('/api/auth/verify', authVerify);
+app.post('/api/auth/verify', authVerify);
 app.post('/api/auth/login', authLogin);
 export default app;
