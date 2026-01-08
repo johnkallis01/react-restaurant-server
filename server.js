@@ -25,7 +25,7 @@ app.use(cors({
         } else {
             callback(new Error("cors not allowed"));
         }
-    }, credentials: true,
+    }
 }));
 // app.options("*", cors(corsOptions));
 app.use(express.json());
